@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    [SerializeField] private float feedbackIntensity = 10f;
+    [SerializeField] private GameObject token;
+    [SerializeField] private Transform tokenSpawnPoint;
+
     [SerializeField] private float snapSpeed = 10f;
 
     private bool isOccupied = false;
@@ -25,11 +30,23 @@ public class Building : MonoBehaviour
         if (isOccupied)
         {
             HoldPlayer();
-            if (Input.GetButtonDown("Jump"))
-            {
-                SendMessage("OnUseBuilding");
-            }
+            GetUseBuilding();
         }
+    }
+
+    private void GetUseBuilding()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            SendMessage("OnUseBuilding");
+            Camera.main.GetComponent<Shake>().ShakeCamera(feedbackIntensity);
+            SpawnToken();
+        }
+    }
+
+    private void SpawnToken()
+    {
+        Instantiate(token, tokenSpawnPoint.position, Quaternion.identity, tokenSpawnPoint);
     }
 
     private void HoldPlayer()
