@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    [SerializeField] private float feedbackIntensity = 10f;
+    //Delegated to function of building
+    //[SerializeField] private float feedbackIntensity = 10f;
     [SerializeField] private GameObject token;
     [SerializeField] private Transform tokenSpawnPoint;
 
@@ -39,12 +40,13 @@ public class Building : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             SendMessage("OnUseBuilding");
-            Camera.main.GetComponent<Shake>().ShakeCamera(feedbackIntensity);
-            SpawnToken();
+            //Delegating to Function of Building
+            //Camera.main.GetComponent<Shake>().ShakeCamera(feedbackIntensity);
+            //SpawnToken();
         }
     }
 
-    private void SpawnToken()
+    public void SpawnToken()
     {
         Instantiate(token, tokenSpawnPoint.position, Quaternion.identity, tokenSpawnPoint);
     }
@@ -90,5 +92,10 @@ public class Building : MonoBehaviour
         isOccupied = false;
         playerMovement.transform.position = transform.position + playerMovement.GetMoveDirection();
         playerMovement.SetCanMove(true);
+    }
+
+    public bool GetIsOccupied()
+    {
+        return isOccupied;
     }
 }

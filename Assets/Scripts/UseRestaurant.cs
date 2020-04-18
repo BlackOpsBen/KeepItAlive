@@ -6,6 +6,7 @@ public class UseRestaurant : MonoBehaviour
 {
     public void OnUseBuilding()
     {
-        Debug.Log(gameObject.name + " used!");
+        // TODO spend money
+        GameManager.Instance.GainEnergy();
     }
 }

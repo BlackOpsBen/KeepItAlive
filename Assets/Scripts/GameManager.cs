@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject HeartBar;
     [SerializeField] private GameObject EnergyBar;
 
-    [SerializeField] private float heartDecay = 1f;
+    [SerializeField] private float heartDecay = 0.5f;
+
+    [SerializeField] private float heartGainDefault = 1f;
+    [SerializeField] private float energySpendDefault = 2f;
+    [SerializeField] private float energyGainDefault = 1f;
 
     private void Awake()
     {
@@ -33,8 +37,43 @@ public class GameManager : MonoBehaviour
         HeartBar.GetComponent<StatBar>().GainOrLoseAmount(amount);
     }
 
-    public void GainOrLoseEnergy(float amount)
+    public void GainHeart()
+    {
+        HeartBar.GetComponent<StatBar>().GainOrLoseAmount(heartGainDefault);
+    }
+
+    public void SpendEnergy(float amount)
+    {
+        EnergyBar.GetComponent<StatBar>().GainOrLoseAmount(-amount);
+    }
+
+    public void SpendEnergy()
+    {
+        EnergyBar.GetComponent<StatBar>().GainOrLoseAmount(-energySpendDefault);
+    }
+
+    public void GainEnergy(float amount)
     {
         EnergyBar.GetComponent<StatBar>().GainOrLoseAmount(amount);
     }
+
+    public void GainEnergy()
+    {
+        EnergyBar.GetComponent<StatBar>().GainOrLoseAmount(energyGainDefault);
+    }
+
+    public float GetCurrentEnergy()
+    {
+        return EnergyBar.GetComponent<StatBar>().GetCurrentAmount();
+    }
+
+    public float GetCurrentHeart()
+    {
+        return HeartBar.GetComponent<StatBar>().GetCurrentAmount();
+    }
+
+    //public int GetCurrentMoney()
+    //{
+    //    // TODO return current money
+    //}
 }

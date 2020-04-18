@@ -6,6 +6,7 @@ public class UseOffice : MonoBehaviour
 {
     public void OnUseBuilding()
     {
-        Debug.Log(gameObject.name + " used!");
+        // TODO gain money
+        GameManager.Instance.SpendEnergy();
     }
 }

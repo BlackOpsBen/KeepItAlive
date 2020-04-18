@@ -59,4 +59,9 @@ public class StatBar : MonoBehaviour
             GainOrLoseAmount(-1f);
         }
     }
+
+    public float GetCurrentAmount()
+    {
+        return currentAmount;
+    }
 }
