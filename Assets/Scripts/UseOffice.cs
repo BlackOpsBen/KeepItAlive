@@ -12,6 +12,7 @@ public class UseOffice : MonoBehaviour
         GameManager.Instance.SpendEnergy(energyCost);
 
         VisualFeedback();
+        AudioManager.Instance.PlaySound("UseOffice");
 
         GameManager.Instance.GainMoney();
     }

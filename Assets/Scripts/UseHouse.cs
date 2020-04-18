@@ -13,12 +13,13 @@ public class UseHouse : MonoBehaviour
             GameManager.Instance.SpendEnergy(energyCost);
 
             VisualFeedback();
+            AudioManager.Instance.PlaySound("UseHouse");
 
             GameManager.Instance.GainHeart();
         }
         else
         {
-            // TODO play negative feedback SFX/VFX
+            AudioManager.Instance.PlaySound("NegativeFeedback");
         }
     }
 

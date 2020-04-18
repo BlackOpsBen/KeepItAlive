@@ -12,6 +12,7 @@ public class UseRestaurant : MonoBehaviour
         GameManager.Instance.SpendMoney(moneyCost);
 
         VisualFeedback();
+        AudioManager.Instance.PlaySound("UseRestaurant");
 
         GameManager.Instance.GainEnergy();
     }
