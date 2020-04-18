@@ -9,12 +9,19 @@ public class UseOffice : MonoBehaviour
 
     public void OnUseBuilding()
     {
-        GameManager.Instance.SpendEnergy(energyCost);
+        if (GameManager.Instance.GetCurrentEnergy() >= energyCost)
+        {
+            GameManager.Instance.SpendEnergy(energyCost);
 
-        VisualFeedback();
-        AudioManager.Instance.PlaySound("UseOffice");
+            VisualFeedback();
+            AudioManager.Instance.PlaySound("UseOffice");
 
-        GameManager.Instance.GainMoney();
+            GameManager.Instance.GainMoney();
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound("NegativeFeedback");
+        }
     }
 
     private void VisualFeedback()

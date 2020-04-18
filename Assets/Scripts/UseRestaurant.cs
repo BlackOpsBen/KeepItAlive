@@ -9,12 +9,19 @@ public class UseRestaurant : MonoBehaviour
 
     public void OnUseBuilding()
     {
-        GameManager.Instance.SpendMoney(moneyCost);
+        if (GameManager.Instance.GetCurrentMoney() >= moneyCost)
+        {
+            GameManager.Instance.SpendMoney(moneyCost);
 
-        VisualFeedback();
-        AudioManager.Instance.PlaySound("UseRestaurant");
+            VisualFeedback();
+            AudioManager.Instance.PlaySound("UseRestaurant");
 
-        GameManager.Instance.GainEnergy();
+            GameManager.Instance.GainEnergy();
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound("NegativeFeedback");
+        }
     }
 
     private void VisualFeedback()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,6 +32,21 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
+    {
+        HeartDecays();
+        if (HeartBar.GetComponent<StatBar>().GetCurrentAmount() <= float.Epsilon)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        // TODO show game over screens and get restart
+        Debug.Log("Game over!");
+    }
+
+    private void HeartDecays()
     {
         if (MoneyBalanceField.GetComponent<MoneyCounter>().GetCurrentBalance() <= 0)
         {
