@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int moneyGainDefault = 100;
     [SerializeField] private int moneySpendDefault = 20;
 
+    private bool isGameOver = false;
+
     private void Awake()
     {
         if (Instance != null)
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         HeartDecays();
-        if (HeartBar.GetComponent<StatBar>().GetCurrentAmount() <= float.Epsilon)
+        if (HeartBar.GetComponent<StatBar>().GetCurrentAmount() <= float.Epsilon && !isGameOver)
         {
             GameOver();
         }
@@ -42,8 +44,9 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        // TODO show game over screens and get restart
-        Debug.Log("Game over!");
+        isGameOver = true;
+        GetComponentInChildren<DivorceOverlay>().ShowOverlay();
+        Debug.Log("Game over. Showing overlay.");
     }
 
     private void HeartDecays()
