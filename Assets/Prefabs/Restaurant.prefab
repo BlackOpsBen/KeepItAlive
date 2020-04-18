@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 257633818801456973}
   - component: {fileID: 6445092323086016082}
   - component: {fileID: 3438856164145668288}
+  - component: {fileID: 4326520640830939149}
   m_Layer: 0
   m_Name: Restaurant
   m_TagString: Untagged
@@ -72,6 +73,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapSpeed: 10
+--- !u!114 &4326520640830939149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117975795949648173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743a3aaa148d3644b9fdf621bf231300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackIntensity: 10
 --- !u!1 &7596082934044513446
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,22 +24,31 @@ public class Building : MonoBehaviour
     {
         if (isOccupied)
         {
-            playerMovement.transform.position = Vector3.Lerp(playerMovement.transform.position, transform.position, Time.deltaTime * snapSpeed);
+            HoldPlayer();
+            if (Input.GetButtonDown("Jump"))
+            {
+                SendMessage("OnUseBuilding");
+            }
+        }
+    }
 
-            exitDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
+    private void HoldPlayer()
+    {
+        playerMovement.transform.position = Vector3.Lerp(playerMovement.transform.position, transform.position, Time.deltaTime * snapSpeed);
 
-            if (exitDirection.magnitude > exitThreshold)
-            {
-                exitCount += Time.deltaTime * 2;
-            }
-            else
-            {
-                exitCount = 0f;
-            }
-            if (exitCount >= exitDelay)
-            {
-                ExitBuilding();
-            }
+        exitDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
+
+        if (exitDirection.magnitude > exitThreshold)
+        {
+            exitCount += Time.deltaTime * 2;
+        }
+        else
+        {
+            exitCount = 0f;
+        }
+        if (exitCount >= exitDelay)
+        {
+            ExitBuilding();
         }
     }
 
@@ -47,11 +56,15 @@ public class Building : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovement>())
         {
-            playerMovement.SetCanMove(false);
-            exitCount = 0f;
-            isOccupied = true;
-            Debug.Log("Occupied building!");
+            EnterBuilding();
         }
+    }
+
+    private void EnterBuilding()
+    {
+        playerMovement.SetCanMove(false);
+        exitCount = 0f;
+        isOccupied = true;
     }
 
     private void ExitBuilding()

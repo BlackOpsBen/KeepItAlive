@@ -15,8 +15,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Jumped!");
-            Camera.main.GetComponent<Shake>().ShakeCamera(10f); // TODO remove this
+            // TODO add actual jump
         }
     }
 }
