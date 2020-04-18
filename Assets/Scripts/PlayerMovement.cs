@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector2 movementInputAxis;
 
+    private Vector3 moveDirection;
+
+    private bool canMove = true;
+
     private void Awake()
     {
         cameraParent = FindObjectOfType<FollowPlayer>().transform;
@@ -33,8 +37,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forward = cameraParent.forward;
         Vector3 right = cameraParent.right;
         Vector3 facingDirection = transform.forward * Mathf.Max(Mathf.Abs(movementInputAxis.x), Mathf.Abs(movementInputAxis.y));
-        Vector3 moveDirection = forward * movementInputAxis.y + right * movementInputAxis.x;
-        transform.Translate(facingDirection * moveSpeedMultiplier * Time.deltaTime, Space.World);
+        moveDirection = forward * movementInputAxis.y + right * movementInputAxis.x;
+        if (canMove)
+        {
+            transform.Translate(facingDirection * moveSpeedMultiplier * Time.deltaTime, Space.World);
+        }
 
         // Rotate to face move direction
         Quaternion rotation = Quaternion.identity;
@@ -46,5 +53,15 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, turnSpeedMultiplier * Time.deltaTime);
         }
+    }
+
+    public void SetCanMove(bool setting)
+    {
+        canMove = setting;
+    }
+
+    public Vector3 GetMoveDirection()
+    {
+        return moveDirection;
     }
 }
