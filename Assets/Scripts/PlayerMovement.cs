@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInputAxis.x = Input.GetAxis("Horizontal");
         movementInputAxis.y = Input.GetAxis("Vertical");
-        Debug.Log(movementInputAxis);
     }
 
     private void ProcessMovement()

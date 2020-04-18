@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2597773254484346120}
   - component: {fileID: 7961163958138916647}
+  - component: {fileID: 3307969221791013705}
+  - component: {fileID: 2250485031573358386}
   m_Layer: 0
   m_Name: Home
   m_TagString: Untagged
@@ -44,6 +46,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f185646f75309438ff99c9bbb4f8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3307969221791013705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913848244115329303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5, z: 2.5}
+  m_Center: {x: 0, y: 1.25, z: 0}
+--- !u!114 &2250485031573358386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913848244115329303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b07d4718f9edee468356e01ec55f922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapSpeed: 10
 --- !u!1 &2663639942012092295
 GameObject:
   m_ObjectHideFlags: 0
