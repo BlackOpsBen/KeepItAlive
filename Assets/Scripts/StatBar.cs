@@ -8,8 +8,8 @@ public class StatBar : MonoBehaviour
     private float defaultMinCap = 10f;
     private float defaultMaxCap = 20f;
     private float containerMaxY = 19.5f;
-    [SerializeField] private float statCap = 10f;
-    [SerializeField] private float currentAmount;
+    private float statCap = 10f;
+    private float currentAmount;
 
     [SerializeField] private RectTransform container;
     [SerializeField] private RectTransform emptyBar;

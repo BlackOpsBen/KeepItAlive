@@ -5,15 +5,16 @@ using UnityEngine;
 public class UseHouse : MonoBehaviour
 {
     [SerializeField] private float energyCost = 1f;
-    [SerializeField] private float feedbackIntensity = 10f;
+    [SerializeField] private float feedbackIntensity = 20f;
     public void OnUseBuilding()
     {
         if (GameManager.Instance.GetCurrentEnergy() >= energyCost)
         {
             GameManager.Instance.SpendEnergy(energyCost);
+
             VisualFeedback();
+
             GameManager.Instance.GainHeart();
-            GameManager.Instance.SpendEnergy();
         }
         else
         {

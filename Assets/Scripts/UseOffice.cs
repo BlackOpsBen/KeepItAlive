@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class UseOffice : MonoBehaviour
 {
+    [SerializeField] private float energyCost = 1f;
+    [SerializeField] private float feedbackIntensity = 10f;
+
     public void OnUseBuilding()
     {
-        // TODO gain money
-        GameManager.Instance.SpendEnergy();
+        GameManager.Instance.SpendEnergy(energyCost);
+
+        VisualFeedback();
+
+        GameManager.Instance.GainMoney();
+    }
+
+    private void VisualFeedback()
+    {
+        Camera.main.GetComponent<Shake>().ShakeCamera(feedbackIntensity);
+        GetComponent<Building>().SpawnToken();
     }
 }

@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class UseRestaurant : MonoBehaviour
 {
+    [SerializeField] private int moneyCost = 19;
+    [SerializeField] private float feedbackIntensity = 10f;
+
     public void OnUseBuilding()
     {
-        // TODO spend money
+        GameManager.Instance.SpendMoney(moneyCost);
+
+        VisualFeedback();
+
         GameManager.Instance.GainEnergy();
+    }
+
+    private void VisualFeedback()
+    {
+        Camera.main.GetComponent<Shake>().ShakeCamera(feedbackIntensity);
+        GetComponent<Building>().SpawnToken();
     }
 }
