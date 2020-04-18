@@ -4,6 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeedMultiplier = 10f;
     [SerializeField] private float turnSpeedMultiplier = 5f;
+
+    [SerializeField] private Animator animator;
     
     private Transform cameraParent;
     
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInputAxis.x = Input.GetAxis("Horizontal");
         movementInputAxis.y = Input.GetAxis("Vertical");
+        animator.SetFloat("Running", movementInputAxis.normalized.magnitude);
     }
 
     private void ProcessMovement()
