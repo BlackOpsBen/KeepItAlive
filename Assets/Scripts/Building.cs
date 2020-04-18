@@ -52,6 +52,7 @@ public class Building : MonoBehaviour
     private void HoldPlayer()
     {
         playerMovement.transform.position = Vector3.Lerp(playerMovement.transform.position, transform.position, Time.deltaTime * snapSpeed);
+        playerMovement.transform.rotation = Quaternion.Slerp(playerMovement.transform.rotation, Quaternion.identity, Time.deltaTime * snapSpeed);
 
         exitDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized;
 
