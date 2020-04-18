@@ -7,17 +7,8 @@ ModelImporter:
       74: -7681441007365279422
     second: Armature|Default
   - first:
-      74: 5508062484833401239
-    second: Armature|PoseLib
-  - first:
-      74: -5132724633130383432
-    second: Armature|PoseLib.001
-  - first:
       74: 5750045614006048670
     second: Armature|Run_Flail
-  - first:
-      74: -3115576650544201415
-    second: Armature|Run_Flailing
   - first:
       74: 8635313451164943315
     second: Armature|Run_Legs
@@ -36,7 +27,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperArm' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -44,7 +36,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -93,7 +85,98 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Player(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Player
+      parentName: Player(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0.000000057601163, z: 0.000000057601163, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Armature
+      parentName: Player(Clone)
+      position: {x: -0, y: 0.34607342, z: 0}
+      rotation: {x: -0.7071068, y: 0.000000047078487, z: 0.000000047078487, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Root
+      parentName: Armature
+      position: {x: -1.886162e-11, y: -0.00007911137, z: -0.0002323155}
+      rotation: {x: 0.70710677, y: -0.00000007377101, z: -0.00000007377102, w: 0.7071069}
+      scale: {x: 1, y: 0.99999976, z: 0.99999976}
+    - name: Neck
+      parentName: Root
+      position: {x: -0, y: 0.0059418767, z: 4.4929337e-18}
+      rotation: {x: 0.00000026822087, y: 0.69627964, z: 0.00000026822087, w: 0.71777064}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Neck
+      position: {x: -3.378653e-13, y: 0.0004325915, z: -4.8603343e-14}
+      rotation: {x: -0.000000025874595, y: -0, z: -0.0000003157446, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: Shoulder_L
+      parentName: Root
+      position: {x: -0, y: 0.0059418767, z: 4.4929337e-18}
+      rotation: {x: 0.57040924, y: -0.41789147, z: -0.57040936, w: -0.41789138}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: Arm_L
+      parentName: Shoulder_L
+      position: {x: -5.0004354e-12, y: 0.0029382438, z: 3.6738984e-10}
+      rotation: {x: 0.017488508, y: -0, z: -0, w: 0.9998471}
+      scale: {x: 1.0000001, y: 1, z: 0.9999998}
+    - name: Hand_L
+      parentName: Arm_L
+      position: {x: -9.020624e-12, y: 0.0018067283, z: 5.92635e-10}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Shoulder_R
+      parentName: Root
+      position: {x: -0, y: 0.005941877, z: 4.4929337e-18}
+      rotation: {x: 0.5704093, y: 0.4178914, z: -0.57040924, w: 0.41789144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Arm_R
+      parentName: Shoulder_R
+      position: {x: -1.13053915e-11, y: 0.002938244, z: -6.11079e-11}
+      rotation: {x: -0.017488403, y: 0.000000104308114, z: 0.000000119209275, w: 0.9998471}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Hand_R
+      parentName: Arm_R
+      position: {x: 9.504442e-13, y: 0.001806728, z: -1.10598364e-10}
+      rotation: {x: 0.000000014901158, y: -0.000000028234169, z: -0.00000008991447,
+        w: 1}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000004}
+    - name: Hip_L
+      parentName: Root
+      position: {x: -0, y: 0, z: 4.4929337e-18}
+      rotation: {x: -0.7085791, y: 0.07958365, z: 0.6967485, w: 0.07825504}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Leg_L
+      parentName: Hip_L
+      position: {x: 3.783498e-12, y: 0.0012973347, z: -3.8562573e-11}
+      rotation: {x: 0.22190551, y: 0.0665827, z: 0.06339077, w: -0.97072464}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000005}
+    - name: Foot_L
+      parentName: Leg_L
+      position: {x: 8.792629e-12, y: 0.0019363634, z: -3.3873678e-11}
+      rotation: {x: 0.11214707, y: 0.05830944, z: 0.06846505, w: 0.9896139}
+      scale: {x: 0.9999997, y: 0.99999976, z: 0.9999998}
+    - name: Hip_R
+      parentName: Root
+      position: {x: -0, y: 0, z: 4.4929337e-18}
+      rotation: {x: 0.70857906, y: 0.07958385, z: -0.6967484, w: 0.07825499}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: Leg_R
+      parentName: Hip_R
+      position: {x: 1.891749e-12, y: 0.0012973347, z: 6.984919e-12}
+      rotation: {x: 0.2247308, y: 0.081205264, z: -0.05250291, w: 0.96961087}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Foot_R
+      parentName: Leg_R
+      position: {x: -4.6961857e-12, y: 0.0019363634, z: 2.3441071e-12}
+      rotation: {x: -0.115196876, y: -0.07561475, z: 0.06319903, w: 0.9884422}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -102,15 +185,15 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Root
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
