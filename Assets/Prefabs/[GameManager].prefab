@@ -52,13 +52,9 @@ MonoBehaviour:
   EnergyBar: {fileID: 3092643005804165219}
   MoneyBalanceField: {fileID: 3092643006194218023}
   heartDecay: 0.5
-  heartGainDefault: 2
-  heartCapGainDefault: 1
-  energySpendDefault: 1
-  energyGainDefault: 2
-  energyCapGainDefault: 1
-  moneyGainDefault: 100
-  moneySpendDefault: 20
+  moneyIcon: {fileID: 0}
+  heartIcon: {fileID: 0}
+  energyIcon: {fileID: 0}
 --- !u!114 &1808020789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +77,14 @@ PrefabInstance:
     - target: {fileID: 729419504, guid: 4f42f08ba2895b449ad171de7d8f66af, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 166
+      objectReference: {fileID: 0}
+    - target: {fileID: 729419505, guid: 4f42f08ba2895b449ad171de7d8f66af, type: 3}
+      propertyPath: m_fontSize
+      value: 63.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 729419505, guid: 4f42f08ba2895b449ad171de7d8f66af, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 63.6
       objectReference: {fileID: 0}
     - target: {fileID: 3090066084261011403, guid: 4f42f08ba2895b449ad171de7d8f66af,
         type: 3}
@@ -342,6 +346,11 @@ PrefabInstance:
       propertyPath: capDecayInterval
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2050033502400248378, guid: 6f74533ef47166b478706691e273ac1b,
+        type: 3}
+      propertyPath: capDecayAmount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f74533ef47166b478706691e273ac1b, type: 3}
 --- !u!1 &3092643006922255421 stripped
@@ -363,6 +372,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3092643007282879338}
     m_Modifications:
+    - target: {fileID: 1592264058, guid: 2555af11f2a7d514898145ec2a57c80f, type: 3}
+      propertyPath: startingAmount
+      value: 999
+      objectReference: {fileID: 0}
     - target: {fileID: 8035027276238764981, guid: 2555af11f2a7d514898145ec2a57c80f,
         type: 3}
       propertyPath: m_Name
@@ -675,6 +688,11 @@ PrefabInstance:
         type: 3}
       propertyPath: capDecayInterval
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331349571354080040, guid: 8826ba79bfaadbf43b27e2bf8d0ecb90,
+        type: 3}
+      propertyPath: capDecayAmount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8826ba79bfaadbf43b27e2bf8d0ecb90, type: 3}
