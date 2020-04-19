@@ -41,6 +41,7 @@ public class DetermineIncome : MonoBehaviour
     {
         currentInterval += intervalIncrease;
         stepsRemaining = currentInterval;
+        incomeIncrease += 10;
     }
 
     public int GetCurrentIncome()

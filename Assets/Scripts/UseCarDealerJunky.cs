@@ -1,28 +1,29 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UseJeweler : MonoBehaviour
+public class UseCarDealerJunky : MonoBehaviour
 {
-    [SerializeField] private int moneyCost = 1000;
-    [SerializeField] private float heartCapGainAmount = 1f;
-    [SerializeField] private float feedbackIntensity = 5f;
+    [SerializeField] private int moneyCost = 5000;
+    [SerializeField] private float feedbackIntensity = 10f;
+
+    private bool hasCar = false;
 
     public void OnUseBuilding()
     {
-        if (!GameManager.Instance.GetIsHeartMaxed())
+        if (!hasCar)
         {
             if (GameManager.Instance.GetCurrentMoney() >= moneyCost)
             {
+                //TODO gain car
+                hasCar = true;
                 GameManager.Instance.SpendMoney(moneyCost);
                 FloatingTextController.Instance.CreateFloatingText("-" + moneyCost.ToString(), FloatingTextController.Instance.moneyColor, GameManager.Instance.moneyIcon.position);
 
                 VisualFeedback();
-                AudioManager.Instance.PlaySound("UseJeweler");
+                AudioManager.Instance.PlaySound("UseDealer");
 
-                GameManager.Instance.IncreaseHeartCap(heartCapGainAmount);
-                FloatingTextController.Instance.CreateFloatingText("+" + heartCapGainAmount.ToString(), Color.white, GameManager.Instance.heartIcon.position);
+
             }
             else
             {
@@ -32,8 +33,9 @@ public class UseJeweler : MonoBehaviour
         }
         else
         {
+            // TODO change car color
             AudioManager.Instance.PlaySound("NegativeFeedback");
-            FloatingTextController.Instance.CreateFloatingText("Lovin' maxed!", FloatingTextController.Instance.heartColor, FloatingTextController.Instance.wordSize, transform.position);
+            FloatingTextController.Instance.CreateFloatingText("Already rollin!", FloatingTextController.Instance.negativeColor, FloatingTextController.Instance.wordSize, transform.position);
         }
     }
 

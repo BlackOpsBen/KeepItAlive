@@ -67,4 +67,10 @@ public class PlayerMovement : MonoBehaviour
     {
         return moveDirection;
     }
+
+    public void SetSpeeds(float move, float turn)
+    {
+        moveSpeedMultiplier = move;
+        turnSpeedMultiplier = turn;
+    }
 }

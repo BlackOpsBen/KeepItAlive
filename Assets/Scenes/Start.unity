@@ -3881,6 +3881,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9170758746386147349, guid: fcce748938d86d2458b2d09ad4580a39,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9170758746683506378, guid: fcce748938d86d2458b2d09ad4580a39,
         type: 3}
       propertyPath: m_LocalPosition.x

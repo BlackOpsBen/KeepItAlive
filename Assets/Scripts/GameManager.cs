@@ -13,13 +13,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float heartDecay = 0.5f;
 
-    [SerializeField] private float heartGainDefault = 1f;
-    [SerializeField] private float heartCapGainDefault = 1f;
-    [SerializeField] private float energySpendDefault = 2f;
-    [SerializeField] private float energyGainDefault = 1f;
-    [SerializeField] private float energyCapGainDefault = 1f;
-    [SerializeField] private int moneyGainDefault = 100;
-    [SerializeField] private int moneySpendDefault = 20;
+    private float heartGainDefault = 1f;
+    private float heartCapGainDefault = 1f;
+    private float energySpendDefault = 2f;
+    private float energyGainDefault = 1f;
+    private float energyCapGainDefault = 1f;
+    private int moneyGainDefault = 100;
+    private int moneySpendDefault = 20;
+
+    [SerializeField] public Transform moneyIcon;
+    [SerializeField] public Transform heartIcon;
+    [SerializeField] public Transform energyIcon;
 
     private bool isGameOver = false;
 
@@ -54,7 +58,6 @@ public class GameManager : MonoBehaviour
     private void DisablePlayerInteraction()
     {
         FindObjectOfType<PlayerMovement>().enabled = false;
-        FindObjectOfType<PlayerJump>().enabled = false;
         Building[] buildings = FindObjectsOfType<Building>();
         foreach (Building building in buildings)
         {

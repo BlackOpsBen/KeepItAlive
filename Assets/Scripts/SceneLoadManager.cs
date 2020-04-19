@@ -18,6 +18,7 @@ public class SceneLoadManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
+                canRestart = false;
                 StartGame();
             }
         }

@@ -111,5 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec68b997013d0c40b5129a4a5510794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  negativeColor: {r: 0, g: 0, b: 0, a: 0}
+  moneyColor: {r: 0, g: 0, b: 0, a: 0}
+  energyColor: {r: 0, g: 0, b: 0, a: 0}
+  heartColor: {r: 0, g: 0, b: 0, a: 0}
+  scatter: 100
   popupTextPrefab: {fileID: 8621315941972589584, guid: b3e4769637adf1c4f8b89e13928247b5,
     type: 3}

@@ -15,23 +15,24 @@ public class UseGym : MonoBehaviour
             if (GameManager.Instance.GetCurrentEnergy() >= energyCost)
             {
                 GameManager.Instance.SpendEnergy(energyCost);
-                FloatingTextController.Instance.CreateFloatingText("-" + energyCost.ToString(), FloatingTextController.Instance.energyColor, transform.position);
+                FloatingTextController.Instance.CreateFloatingText("-" + energyCost.ToString(), FloatingTextController.Instance.energyColor, GameManager.Instance.energyIcon.position);
 
                 VisualFeedback();
                 AudioManager.Instance.PlaySound("UseGym");
 
                 GameManager.Instance.IncreaseEnergyCap(energyCapGain);
+                FloatingTextController.Instance.CreateFloatingText("+" + energyCapGain.ToString(), Color.white, GameManager.Instance.energyIcon.position);
             }
             else
             {
                 AudioManager.Instance.PlaySound("NegativeFeedback");
-                FloatingTextController.Instance.CreateFloatingText("Need more energy", FloatingTextController.Instance.negativeColor, 50f, transform.position);
+                FloatingTextController.Instance.CreateFloatingText("Need more energy", FloatingTextController.Instance.negativeColor, FloatingTextController.Instance.wordSize, transform.position);
             }
         }
         else
         {
             AudioManager.Instance.PlaySound("NegativeFeedback");
-            FloatingTextController.Instance.CreateFloatingText("You're swole enough!", FloatingTextController.Instance.energyColor, 50f, transform.position);
+            FloatingTextController.Instance.CreateFloatingText("You're swole enough!", FloatingTextController.Instance.energyColor, FloatingTextController.Instance.wordSize, transform.position);
         }
     }
 

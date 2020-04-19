@@ -5,6 +5,7 @@ using UnityEngine;
 public class UseRestaurant : MonoBehaviour
 {
     [SerializeField] private int moneyCost = 19;
+    [SerializeField] private float energyGainAmount = 2f;
     [SerializeField] private float feedbackIntensity = 10f;
 
     public void OnUseBuilding()
@@ -14,12 +15,13 @@ public class UseRestaurant : MonoBehaviour
             if (GameManager.Instance.GetCurrentMoney() >= moneyCost)
             {
                 GameManager.Instance.SpendMoney(moneyCost);
-                FloatingTextController.Instance.CreateFloatingText("-$" + moneyCost.ToString(), FloatingTextController.Instance.moneyColor, transform.position);
+                FloatingTextController.Instance.CreateFloatingText("-$" + moneyCost.ToString(), FloatingTextController.Instance.moneyColor, GameManager.Instance.moneyIcon.position);
 
                 VisualFeedback();
                 AudioManager.Instance.PlaySound("UseRestaurant");
 
-                GameManager.Instance.GainEnergy();
+                GameManager.Instance.GainEnergy(energyGainAmount);
+                FloatingTextController.Instance.CreateFloatingText("+" + energyGainAmount.ToString(), FloatingTextController.Instance.energyColor, GameManager.Instance.energyIcon.position);
             }
             else
             {
@@ -30,7 +32,7 @@ public class UseRestaurant : MonoBehaviour
         else
         {
             AudioManager.Instance.PlaySound("NegativeFeedback");
-            FloatingTextController.Instance.CreateFloatingText("Energy full!", FloatingTextController.Instance.energyColor, 50f, transform.position);
+            FloatingTextController.Instance.CreateFloatingText("Energy full!", FloatingTextController.Instance.energyColor, FloatingTextController.Instance.wordSize, transform.position);
         }
 
         

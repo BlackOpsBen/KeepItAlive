@@ -10,7 +10,8 @@ public class FloatingTextController : MonoBehaviour
     [SerializeField] public Color moneyColor;
     [SerializeField] public Color energyColor;
     [SerializeField] public Color heartColor;
-    [SerializeField] private float scatter = 15f;
+    [SerializeField] private float scatter = 100f;
+    [SerializeField] public float wordSize = 60f;
 
     [SerializeField] private GameObject popupTextPrefab;
 
