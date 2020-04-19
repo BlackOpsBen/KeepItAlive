@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 7020937998288249028}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6174956514754696282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7377392694730440169}
+  m_Layer: 0
+  m_Name: carParkSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7377392694730440169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174956514754696282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7020937998288249028}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6283709166910804695
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,6 +93,7 @@ Transform:
   m_Children:
   - {fileID: 7839192202239982955}
   - {fileID: 7277709235013691819}
+  - {fileID: 7377392694730440169}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,6 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8dc9d1fbce418499b163251f07f47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyCost: 5000
+  feedbackIntensity: 10
+  carParkSpot: {fileID: 7377392694730440169}
 --- !u!1 &8468320204534362185
 GameObject:
   m_ObjectHideFlags: 0

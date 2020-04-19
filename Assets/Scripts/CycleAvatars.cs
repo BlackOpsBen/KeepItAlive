@@ -5,15 +5,32 @@ using System;
 
 public class CycleAvatars : MonoBehaviour
 {
+    public static CycleAvatars Instance { get; private set; }
+
     [SerializeField] private PlayerAvatar[] playerAvatars;
     [SerializeField] private int currentlyActive = 0;
+
+    [SerializeField] private GameObject toggleFX;
 
     private bool canToggle = false;
     private bool isChecking = false;
 
     private void Awake()
     {
+        EnsureOnlyOneInstance();
         DisableLockedAvatars();
+    }
+
+    private void EnsureOnlyOneInstance()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     private void DisableLockedAvatars()
@@ -71,10 +88,21 @@ public class CycleAvatars : MonoBehaviour
     public void UnlockAvatar(string name)
     {
         int avatarIndex = Array.FindIndex(playerAvatars, playerAvatar => playerAvatar.name == name);
-        Debug.Log("avatarIndex = " + avatarIndex);
         playerAvatars[avatarIndex].isUnlocked = true;
-        
+        playerAvatars[currentlyActive].avatarObject.SetActive(false);
+        playerAvatars[avatarIndex].avatarObject.SetActive(true);
+        currentlyActive = avatarIndex;
+        if (!canToggle)
+        {
+            StartCoroutine(SetCanToggle());
+        }
         //PlayerAvatar avatar = Array.Find(playerAvatars, playerAvatar => playerAvatar.name == name);
         //avatar.isUnlocked = true;
+    }
+
+    private IEnumerator SetCanToggle()
+    {
+        yield return null;
+        canToggle = true;
     }
 }

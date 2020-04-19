@@ -112,4 +112,10 @@ public class Building : MonoBehaviour
     {
         return isOccupied;
     }
+
+    public void ForceExitBuilding()
+    {
+        isOccupied = false;
+        playerMovement.SetCanMove(true);
+    }
 }

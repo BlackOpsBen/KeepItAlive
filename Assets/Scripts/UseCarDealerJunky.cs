@@ -6,6 +6,7 @@ public class UseCarDealerJunky : MonoBehaviour
 {
     [SerializeField] private int moneyCost = 5000;
     [SerializeField] private float feedbackIntensity = 10f;
+    [SerializeField] private Transform carParkSpot;
 
     private bool hasCar = false;
 
@@ -23,7 +24,11 @@ public class UseCarDealerJunky : MonoBehaviour
                 VisualFeedback();
                 AudioManager.Instance.PlaySound("UseDealer");
 
+                CycleAvatars.Instance.UnlockAvatar("CarJunky");
 
+                // Move player to parked car spot
+                GetComponent<Building>().ForceExitBuilding();
+                FindObjectOfType<PlayerMovement>().transform.position = carParkSpot.position;
             }
             else
             {
