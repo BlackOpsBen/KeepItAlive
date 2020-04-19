@@ -275,6 +275,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD_Icons
       objectReference: {fileID: 0}
+    - target: {fileID: 1795738092398758313, guid: 9d6905a427b7eac49b43630fc5e396a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2694050738773199776, guid: 9d6905a427b7eac49b43630fc5e396a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -330,6 +335,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3888903404031374647, guid: 9d6905a427b7eac49b43630fc5e396a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577644761835498229, guid: 9d6905a427b7eac49b43630fc5e396a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5253466860033882749, guid: 9d6905a427b7eac49b43630fc5e396a3,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -359,6 +374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423434181881611819, guid: 9d6905a427b7eac49b43630fc5e396a3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6905a427b7eac49b43630fc5e396a3, type: 3}

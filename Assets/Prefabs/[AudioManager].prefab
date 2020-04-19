@@ -88,3 +88,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 8b8b4a137c07af147953d1b8fd1df6a0, type: 3}
     volume: 1
     source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 9935e9cdc461a2547b0dc4a7106d5880, type: 3}
+    volume: 1
+    source: {fileID: 0}

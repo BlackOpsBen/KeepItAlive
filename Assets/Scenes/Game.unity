@@ -15709,23 +15709,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4618963377449473679, guid: 4838553f8cb2f58499ed709845132254,
-        type: 3}
-      propertyPath: footStepSoundObject
-      value: 
-      objectReference: {fileID: 7424246204520484322, guid: 9800ff0780c7acd4690ea608b4c29e02,
-        type: 3}
     - target: {fileID: 6737229073832073616, guid: 4838553f8cb2f58499ed709845132254,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6853363900055854409, guid: 4838553f8cb2f58499ed709845132254,
-        type: 3}
-      propertyPath: footStepSoundObject
-      value: 
-      objectReference: {fileID: 7424246204520484322, guid: 9800ff0780c7acd4690ea608b4c29e02,
-        type: 3}
     - target: {fileID: 7720344028384275331, guid: 4838553f8cb2f58499ed709845132254,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16140,6 +16128,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
+      propertyPath: m_text
+      value: Press Action button to restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
+        type: 3}
+      propertyPath: m_text
+      value: 'You ain''t no
+
+        kinda lover!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3092643007282879333, guid: e209165d4bf47c64ebe512f2e20a7d6b,
         type: 3}
       propertyPath: moneyIcon
@@ -16562,26 +16598,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1510837202279184388, guid: f1ce3b24209a45344829c5f8acc0c7d8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2200207209348114374, guid: f1ce3b24209a45344829c5f8acc0c7d8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4171464802922890394, guid: f1ce3b24209a45344829c5f8acc0c7d8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659589165542050584, guid: f1ce3b24209a45344829c5f8acc0c7d8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7727476292812898717, guid: f1ce3b24209a45344829c5f8acc0c7d8,
         type: 3}
       propertyPath: m_Name
@@ -16610,7 +16626,7 @@ PrefabInstance:
     - target: {fileID: 7727476292812898719, guid: f1ce3b24209a45344829c5f8acc0c7d8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.911762
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 7727476292812898719, guid: f1ce3b24209a45344829c5f8acc0c7d8,
         type: 3}
@@ -16620,7 +16636,7 @@ PrefabInstance:
     - target: {fileID: 7727476292812898719, guid: f1ce3b24209a45344829c5f8acc0c7d8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.41071895
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 7727476292812898719, guid: f1ce3b24209a45344829c5f8acc0c7d8,
         type: 3}
@@ -16635,7 +16651,7 @@ PrefabInstance:
     - target: {fileID: 7727476292812898719, guid: f1ce3b24209a45344829c5f8acc0c7d8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 131.5
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 7727476292812898719, guid: f1ce3b24209a45344829c5f8acc0c7d8,
         type: 3}
