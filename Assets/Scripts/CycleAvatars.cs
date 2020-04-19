@@ -58,6 +58,7 @@ public class CycleAvatars : MonoBehaviour
 
     public void ToggleAvatar()
     {
+        Debug.Log("ToggleAvatar called and started");
         isChecking = true;
         int lastChecked = currentlyActive;
         int nextToCheck;
@@ -72,6 +73,7 @@ public class CycleAvatars : MonoBehaviour
             {
                 nextToCheck = lastChecked + 1;
             }
+            Debug.Log("NextToCheck = " + nextToCheck);
             if (playerAvatars[nextToCheck].isUnlocked)
             {
                 // Disable previously active avatar
