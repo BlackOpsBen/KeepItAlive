@@ -76,3 +76,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f1e2277ef28212b4587aed7dd42eb224, type: 3}
     volume: 1
     source: {fileID: 0}
+  - name: UseDealer
+    clip: {fileID: 8300000, guid: 22be7156626b91b45a91355b95eb5b93, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: ToggleAvatar
+    clip: {fileID: 8300000, guid: 741d0eb1c9ba95045a370452a5ae2f2a, type: 3}
+    volume: 1
+    source: {fileID: 0}

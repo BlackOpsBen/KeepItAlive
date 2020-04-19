@@ -82,6 +82,8 @@ public class CycleAvatars : MonoBehaviour
                     GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[nextToCheck].moveSpeed, playerAvatars[nextToCheck].turnSpeed);
                 }
             }
+            toggleFX.GetComponent<ParticleSystem>().Play();
+            AudioManager.Instance.PlaySound("ToggleAvatar");
         }
     }
 
