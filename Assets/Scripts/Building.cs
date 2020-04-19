@@ -80,6 +80,20 @@ public class Building : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<PlayerMovement>())
+        {
+            if (!isOccupied)
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    EnterBuilding();
+                }
+            }
+        }
+    }
+
     private void EnterBuilding()
     {
         playerMovement.SetCanMove(false);
@@ -90,7 +104,7 @@ public class Building : MonoBehaviour
     private void ExitBuilding()
     {
         isOccupied = false;
-        playerMovement.transform.position = transform.position + playerMovement.GetMoveDirection();
+        playerMovement.transform.position = transform.position + playerMovement.GetMoveDirection() * 2f;
         playerMovement.SetCanMove(true);
     }
 
