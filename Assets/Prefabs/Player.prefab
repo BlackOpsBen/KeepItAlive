@@ -191,7 +191,7 @@ MonoBehaviour:
     avatarObject: {fileID: 8121653734404185237}
     isUnlocked: 0
     moveSpeed: 15
-    turnSpeed: 20
+    turnSpeed: 40
   currentlyActive: 0
   toggleFX: {fileID: 1013062021893694914}
 --- !u!114 &1340714804

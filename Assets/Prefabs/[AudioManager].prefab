@@ -84,3 +84,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 741d0eb1c9ba95045a370452a5ae2f2a, type: 3}
     volume: 1
     source: {fileID: 0}
+  - name: UseDojo
+    clip: {fileID: 8300000, guid: 8b8b4a137c07af147953d1b8fd1df6a0, type: 3}
+    volume: 1
+    source: {fileID: 0}

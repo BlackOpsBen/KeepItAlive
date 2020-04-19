@@ -15,11 +15,12 @@ public class CycleAvatars : MonoBehaviour
     private bool isInBuilding = false;
     private bool canToggle = false;
     private bool isChecking = false;
+    private int nextOption = 0;
 
     private void Awake()
     {
         EnsureOnlyOneInstance();
-        DisableLockedAvatars();
+        DisableInactiveAvatars();
     }
 
     private void EnsureOnlyOneInstance()
@@ -34,7 +35,7 @@ public class CycleAvatars : MonoBehaviour
         }
     }
 
-    private void DisableLockedAvatars()
+    private void DisableInactiveAvatars()
     {
         for (int i = 0; i < playerAvatars.Length; i++)
         {
@@ -58,49 +59,86 @@ public class CycleAvatars : MonoBehaviour
 
     public void ToggleAvatar()
     {
-        Debug.Log("ToggleAvatar called and started");
+        nextOption = currentlyActive;
         isChecking = true;
-        int lastChecked = currentlyActive;
-        int nextToCheck;
         while (isChecking)
         {
-            //if last checked is last in list, check first in list
-            if (lastChecked == playerAvatars.Length - 1)
+            nextOption++;
+            if (nextOption > (playerAvatars.Length - 1))
             {
-                nextToCheck = 0;
+                nextOption = 0;
             }
-            else
-            {
-                nextToCheck = lastChecked + 1;
-            }
-            Debug.Log("NextToCheck = " + nextToCheck);
-            if (playerAvatars[nextToCheck].isUnlocked)
-            {
-                // Disable previously active avatar
-                playerAvatars[currentlyActive].avatarObject.SetActive(false);
 
-                // Enable the new avatar and set it as active
-                playerAvatars[nextToCheck].avatarObject.SetActive(true);
-                currentlyActive = nextToCheck;
-
-                // Set isChecking to false
+            if (playerAvatars[nextOption].isUnlocked)
+            {
+                EnableAvatar(nextOption);
+                DisableInactiveAvatars();
                 isChecking = false;
-
-                GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[nextToCheck].moveSpeed, playerAvatars[nextToCheck].turnSpeed);
+                toggleFX.GetComponent<ParticleSystem>().Play();
+                AudioManager.Instance.PlaySound("ToggleAvatar");
             }
         }
-        toggleFX.GetComponent<ParticleSystem>().Play();
-        AudioManager.Instance.PlaySound("ToggleAvatar");
+        
+
     }
+
+    private void EnableAvatar(int selected)
+    {
+        currentlyActive = selected;
+        playerAvatars[selected].avatarObject.SetActive(true);
+        GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[currentlyActive].moveSpeed, playerAvatars[currentlyActive].turnSpeed);
+    }
+
+    //public void ToggleAvatar()
+    //{
+    //    Debug.Log("ToggleAvatar called and started");
+    //    isChecking = true;
+    //    int lastChecked = currentlyActive;
+    //    int nextToCheck;
+    //    while (isChecking)
+    //    {
+    //        //if last checked is last in list, check first in list
+    //        if (lastChecked == playerAvatars.Length - 1)
+    //        {
+    //            nextToCheck = 0;
+    //        }
+    //        else
+    //        {
+    //            nextToCheck = lastChecked + 1;
+    //        }
+    //        Debug.Log("NextToCheck = " + nextToCheck);
+    //        if (playerAvatars[nextToCheck].isUnlocked)
+    //        {
+    //            // Disable previously active avatar
+    //            playerAvatars[currentlyActive].avatarObject.SetActive(false);
+
+    //            // Enable the new avatar and set it as active
+    //            playerAvatars[nextToCheck].avatarObject.SetActive(true);
+    //            currentlyActive = nextToCheck;
+
+    //            // Set isChecking to false
+    //            isChecking = false;
+
+    //            GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[nextToCheck].moveSpeed, playerAvatars[nextToCheck].turnSpeed);
+    //        }
+    //    }
+    //    toggleFX.GetComponent<ParticleSystem>().Play();
+    //    AudioManager.Instance.PlaySound("ToggleAvatar");
+    //}
 
     public void UnlockAvatar(string name)
     {
         int avatarIndex = Array.FindIndex(playerAvatars, playerAvatar => playerAvatar.name == name);
         playerAvatars[avatarIndex].isUnlocked = true;
-        playerAvatars[currentlyActive].avatarObject.SetActive(false);
-        playerAvatars[avatarIndex].avatarObject.SetActive(true);
-        currentlyActive = avatarIndex;
-        GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[avatarIndex].moveSpeed, playerAvatars[avatarIndex].turnSpeed);
+
+        EnableAvatar(avatarIndex);
+        DisableInactiveAvatars();
+        
+        //playerAvatars[currentlyActive].avatarObject.SetActive(false);
+        //playerAvatars[avatarIndex].avatarObject.SetActive(true);
+        //currentlyActive = avatarIndex;
+        //GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[avatarIndex].moveSpeed, playerAvatars[avatarIndex].turnSpeed);
+        
         if (!canToggle)
         {
             StartCoroutine(SetCanToggle());
