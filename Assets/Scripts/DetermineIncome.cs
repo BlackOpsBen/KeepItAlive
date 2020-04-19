@@ -28,7 +28,7 @@ public class DetermineIncome : MonoBehaviour
         {
             IncreaseIncome();
             IncreaseInterval();
-            VisualFeedback();
+            FeedbackFX();
         }
     }
 
@@ -48,9 +48,9 @@ public class DetermineIncome : MonoBehaviour
         return currentIncome;
     }
 
-    private void VisualFeedback()
+    private void FeedbackFX()
     {
-        // TODO feedback
-        Debug.Log("Salary Increased!");
+        FloatingTextController.Instance.CreateFloatingText("Salary increased!", Color.white, 100f, transform.position);
+        AudioManager.Instance.PlaySound("SalaryIncreased");
     }
 }

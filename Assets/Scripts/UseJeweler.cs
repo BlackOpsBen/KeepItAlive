@@ -30,6 +30,5 @@ public class UseJeweler : MonoBehaviour
     {
         Camera.main.GetComponent<Shake>().ShakeCamera(feedbackIntensity);
         GetComponent<Building>().SpawnToken();
-        FloatingTextController.Instance.CreateFloatingText("-" + moneyCost.ToString(), Color.cyan, transform.position);
     }
 }

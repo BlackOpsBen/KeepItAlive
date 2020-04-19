@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 394.21, y: 112.94}
+  m_SizeDelta: {x: 959.1, y: 637.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8621315940593411143
 CanvasRenderer:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 1448681410062199097}
   - component: {fileID: 5546937826552283001}
   m_Layer: 5
-  m_Name: PopupTextParent
+  m_Name: PopupText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 242.06, y: 180.92}
+  m_SizeDelta: {x: 809, y: 460.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448681410062199097
 MonoBehaviour:
