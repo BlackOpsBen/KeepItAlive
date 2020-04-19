@@ -99,11 +99,13 @@ public class Building : MonoBehaviour
         playerMovement.SetCanMove(false);
         exitCount = 0f;
         isOccupied = true;
+        CycleAvatars.Instance.SetIsInBuilding(true);
     }
 
     private void ExitBuilding()
     {
         isOccupied = false;
+        CycleAvatars.Instance.SetIsInBuilding(false);
         playerMovement.transform.position = transform.position + playerMovement.GetMoveDirection() * 2f;
         playerMovement.SetCanMove(true);
     }
@@ -116,6 +118,7 @@ public class Building : MonoBehaviour
     public void ForceExitBuilding()
     {
         isOccupied = false;
+        CycleAvatars.Instance.SetIsInBuilding(false);
         playerMovement.SetCanMove(true);
     }
 }

@@ -12,6 +12,7 @@ public class CycleAvatars : MonoBehaviour
 
     [SerializeField] private GameObject toggleFX;
 
+    private bool isInBuilding = false;
     private bool canToggle = false;
     private bool isChecking = false;
 
@@ -46,45 +47,48 @@ public class CycleAvatars : MonoBehaviour
 
     private void Update()
     {
-        ToggleAvatar();
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (!isInBuilding && canToggle)
+            {
+                ToggleAvatar();
+            }
+        }
     }
 
-    private void ToggleAvatar()
+    public void ToggleAvatar()
     {
-        if (Input.GetButtonDown("Jump") && canToggle)
+        isChecking = true;
+        int lastChecked = currentlyActive;
+        int nextToCheck;
+        while (isChecking)
         {
-            isChecking = true;
-            int lastChecked = currentlyActive;
-            int nextToCheck;
-            while (isChecking)
+            //if last checked is last in list, check first in list
+            if (lastChecked == playerAvatars.Length - 1)
             {
-                //if last checked is last in list, check first in list
-                if (lastChecked == playerAvatars.Length - 1)
-                {
-                    nextToCheck = 0;
-                }
-                else
-                {
-                    nextToCheck = lastChecked + 1;
-                }
-                if (playerAvatars[nextToCheck].isUnlocked)
-                {
-                    // Disable previously active avatar
-                    playerAvatars[currentlyActive].avatarObject.SetActive(false);
-
-                    // Enable the new avatar and set it as active
-                    playerAvatars[nextToCheck].avatarObject.SetActive(true);
-                    currentlyActive = nextToCheck;
-
-                    // Set isChecking to false
-                    isChecking = false;
-
-                    GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[nextToCheck].moveSpeed, playerAvatars[nextToCheck].turnSpeed);
-                }
+                nextToCheck = 0;
             }
-            toggleFX.GetComponent<ParticleSystem>().Play();
-            AudioManager.Instance.PlaySound("ToggleAvatar");
+            else
+            {
+                nextToCheck = lastChecked + 1;
+            }
+            if (playerAvatars[nextToCheck].isUnlocked)
+            {
+                // Disable previously active avatar
+                playerAvatars[currentlyActive].avatarObject.SetActive(false);
+
+                // Enable the new avatar and set it as active
+                playerAvatars[nextToCheck].avatarObject.SetActive(true);
+                currentlyActive = nextToCheck;
+
+                // Set isChecking to false
+                isChecking = false;
+
+                GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[nextToCheck].moveSpeed, playerAvatars[nextToCheck].turnSpeed);
+            }
         }
+        toggleFX.GetComponent<ParticleSystem>().Play();
+        AudioManager.Instance.PlaySound("ToggleAvatar");
     }
 
     public void UnlockAvatar(string name)
@@ -106,5 +110,10 @@ public class CycleAvatars : MonoBehaviour
     {
         yield return null;
         canToggle = true;
+    }
+
+    public void SetIsInBuilding(bool value)
+    {
+        isInBuilding = value;
     }
 }
