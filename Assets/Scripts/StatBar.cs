@@ -43,25 +43,18 @@ public class StatBar : MonoBehaviour
         fillBar.localScale = new Vector3(fillBar.localScale.x, currentAmount, fillBar.localScale.z);
     }
 
-    private void Update()
-    {
-        // TODO remove Update
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SetCap(1f);
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            GainOrLoseAmount(1f);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GainOrLoseAmount(-1f);
-        }
-    }
-
     public float GetCurrentAmount()
     {
         return currentAmount;
+    }
+
+    public float GetStatCap()
+    {
+        return statCap;
+    }
+
+    public bool GetIsMaxedOut()
+    {
+        return statCap >= defaultMaxCap;
     }
 }

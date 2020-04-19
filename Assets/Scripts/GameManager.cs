@@ -158,4 +158,19 @@ public class GameManager : MonoBehaviour
     {
         return MoneyBalanceField.GetComponent<MoneyCounter>().GetCurrentBalance();
     }
+
+    public float GetMaxEnergy()
+    {
+        return EnergyBar.GetComponent<StatBar>().GetStatCap();
+    }
+
+    public bool GetIsHeartMaxed()
+    {
+        return HeartBar.GetComponent<StatBar>().GetIsMaxedOut();
+    }
+
+    public bool GetIsEnergyMaxed()
+    {
+        return EnergyBar.GetComponent<StatBar>().GetIsMaxedOut();
+    }
 }

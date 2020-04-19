@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,21 +10,34 @@ public class UseJeweler : MonoBehaviour
 
     public void OnUseBuilding()
     {
-        if (GameManager.Instance.GetCurrentMoney() >= moneyCost)
+        if (!GameManager.Instance.GetIsHeartMaxed())
         {
-            GameManager.Instance.SpendMoney(moneyCost);
-            FloatingTextController.Instance.CreateFloatingText("-" + moneyCost.ToString(), FloatingTextController.Instance.moneyColor, transform.position);
+            if (GameManager.Instance.GetCurrentMoney() >= moneyCost)
+            {
+                GameManager.Instance.SpendMoney(moneyCost);
+                FloatingTextController.Instance.CreateFloatingText("-" + moneyCost.ToString(), FloatingTextController.Instance.moneyColor, transform.position);
 
-            VisualFeedback();
-            AudioManager.Instance.PlaySound("UseJeweler");
+                VisualFeedback();
+                AudioManager.Instance.PlaySound("UseJeweler");
 
-            GameManager.Instance.IncreaseHeartCap();
+                GameManager.Instance.IncreaseHeartCap();
+            }
+            else
+            {
+                AudioManager.Instance.PlaySound("NegativeFeedback");
+                FloatingTextController.Instance.CreateFloatingText("Need $" + moneyCost.ToString(), FloatingTextController.Instance.negativeColor, 50f, transform.position);
+            }
         }
         else
         {
             AudioManager.Instance.PlaySound("NegativeFeedback");
-            FloatingTextController.Instance.CreateFloatingText("Need $" + moneyCost.ToString(), FloatingTextController.Instance.negativeColor, 50f, transform.position);
+            FloatingTextController.Instance.CreateFloatingText("Lovin' maxed!", FloatingTextController.Instance.heartColor, 50f, transform.position);
         }
+    }
+
+    private void PutUpForSale()
+    {
+        isForSale = true;
     }
 
     private void VisualFeedback()

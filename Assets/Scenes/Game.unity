@@ -9032,6 +9032,21 @@ PrefabInstance:
       propertyPath: scatter
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4121384620816551584, guid: 1c3512cdc42ecf04da4334025f101545,
+        type: 3}
+      propertyPath: heartColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121384620816551584, guid: 1c3512cdc42ecf04da4334025f101545,
+        type: 3}
+      propertyPath: heartColor.b
+      value: 0.49411768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121384620816551584, guid: 1c3512cdc42ecf04da4334025f101545,
+        type: 3}
+      propertyPath: heartColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4121384620816551585, guid: 1c3512cdc42ecf04da4334025f101545,
         type: 3}
       propertyPath: m_LocalPosition.x
