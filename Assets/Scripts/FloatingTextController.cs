@@ -35,7 +35,6 @@ public class FloatingTextController : MonoBehaviour
     {
         Vector2 screenPos = Camera.main.WorldToScreenPoint(location);
         screenPos = new Vector2(screenPos.x + Random.Range(-scatter, scatter), screenPos.y + Random.Range(-scatter, scatter));
-        Debug.Log(screenPos);
 
         GameObject newPopupText = Instantiate(popupTextPrefab, screenPos, Quaternion.identity, gameObject.transform);
         newPopupText.GetComponent<FloatingText>().SetText(text, color);

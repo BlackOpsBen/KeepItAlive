@@ -35,11 +35,6 @@ public class UseJeweler : MonoBehaviour
         }
     }
 
-    private void PutUpForSale()
-    {
-        isForSale = true;
-    }
-
     private void VisualFeedback()
     {
         Camera.main.GetComponent<Shake>().ShakeCamera(feedbackIntensity);

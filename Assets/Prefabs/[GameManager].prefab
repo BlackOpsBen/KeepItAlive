@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092643007282879338}
   - component: {fileID: 3092643007282879333}
+  - component: {fileID: 1808020789}
   m_Layer: 0
   m_Name: '[GameManager]'
   m_TagString: Untagged
@@ -52,10 +53,24 @@ MonoBehaviour:
   MoneyBalanceField: {fileID: 3092643006194218023}
   heartDecay: 0.5
   heartGainDefault: 2
+  heartCapGainDefault: 1
   energySpendDefault: 1
   energyGainDefault: 2
+  energyCapGainDefault: 1
   moneyGainDefault: 100
   moneySpendDefault: 20
+--- !u!114 &1808020789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092643007282879335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2e1fcaa9b02864ab1be7004a4ee917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2630953528161166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,6 +191,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DivorceScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090066084295188292, guid: 4f42f08ba2895b449ad171de7d8f66af,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090066084295188292, guid: 4f42f08ba2895b449ad171de7d8f66af,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090066084492083083, guid: 4f42f08ba2895b449ad171de7d8f66af,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8184328130565952124, guid: 4f42f08ba2895b449ad171de7d8f66af,
         type: 3}
@@ -306,6 +336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050033502400248378, guid: 6f74533ef47166b478706691e273ac1b,
+        type: 3}
+      propertyPath: capDecayInterval
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f74533ef47166b478706691e273ac1b, type: 3}
@@ -635,6 +670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331349571354080040, guid: 8826ba79bfaadbf43b27e2bf8d0ecb90,
+        type: 3}
+      propertyPath: capDecayInterval
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8826ba79bfaadbf43b27e2bf8d0ecb90, type: 3}

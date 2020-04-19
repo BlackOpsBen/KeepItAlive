@@ -15,9 +15,30 @@ public class StatBar : MonoBehaviour
     [SerializeField] private RectTransform emptyBar;
     [SerializeField] private RectTransform fillBar;
 
+    [SerializeField] private float capDecayInterval = 10f;
+    [SerializeField] private float capDecayAmount = 0.5f;
+
     private void Awake()
     {
         currentAmount = statCap;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(CapDecay());
+    }
+
+    private IEnumerator CapDecay()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(capDecayInterval);
+            if (statCap > defaultMinCap)
+            {
+                SetCap(-capDecayAmount);
+                GainOrLoseAmount(0);
+            }
+        }
     }
 
     public void GainOrLoseAmount(float amount)

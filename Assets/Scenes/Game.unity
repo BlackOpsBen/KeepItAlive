@@ -8739,30 +8739,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2630953907092862, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 166
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 16777215
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006552697921, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643007260167173, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3092643007282879335, guid: e209165d4bf47c64ebe512f2e20a7d6b,
         type: 3}
       propertyPath: m_Name
@@ -8823,18 +8799,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3092643007379177153, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 21e99e33f2b39f74fb286b4b87bec6d5,
-        type: 2}
-    - target: {fileID: 3092643007379177153, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 3822834696727516959, guid: 21e99e33f2b39f74fb286b4b87bec6d5,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
 --- !u!1001 &3182399347925561696
