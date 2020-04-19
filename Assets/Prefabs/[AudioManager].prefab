@@ -60,3 +60,11 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 32ef4d6cca5aa9a4e970020218700597, type: 3}
     volume: 1
     source: {fileID: 0}
+  - name: UseGym
+    clip: {fileID: 8300000, guid: bc48cb1b036618f4886d4729ddc49da7, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: UseJeweler
+    clip: {fileID: 8300000, guid: 5b7407e3330950a42b273037c9579e2a, type: 3}
+    volume: 1
+    source: {fileID: 0}

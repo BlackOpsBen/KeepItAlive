@@ -6,6 +6,12 @@ public class UseOffice : MonoBehaviour
 {
     [SerializeField] private float energyCost = 1f;
     [SerializeField] private float feedbackIntensity = 10f;
+    private DetermineIncome determineIncome;
+
+    private void Awake()
+    {
+        determineIncome = GetComponent<DetermineIncome>();
+    }
 
     public void OnUseBuilding()
     {
@@ -16,7 +22,8 @@ public class UseOffice : MonoBehaviour
             VisualFeedback();
             AudioManager.Instance.PlaySound("UseOffice");
 
-            GameManager.Instance.GainMoney();
+            GameManager.Instance.GainMoney(determineIncome.GetCurrentIncome());
+            determineIncome.DecreaseSteps();
         }
         else
         {

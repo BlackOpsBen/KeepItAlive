@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float heartDecay = 0.5f;
 
     [SerializeField] private float heartGainDefault = 1f;
+    [SerializeField] private float heartCapGainDefault = 1f;
     [SerializeField] private float energySpendDefault = 2f;
     [SerializeField] private float energyGainDefault = 1f;
+    [SerializeField] private float energyCapGainDefault = 1f;
     [SerializeField] private int moneyGainDefault = 100;
     [SerializeField] private int moneySpendDefault = 20;
 
@@ -45,8 +47,19 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         isGameOver = true;
+        DisablePlayerInteraction();
         GetComponentInChildren<DivorceOverlay>().ShowOverlay();
-        Debug.Log("Game over. Showing overlay.");
+    }
+
+    private void DisablePlayerInteraction()
+    {
+        FindObjectOfType<PlayerMovement>().enabled = false;
+        FindObjectOfType<PlayerJump>().enabled = false;
+        Building[] buildings = FindObjectsOfType<Building>();
+        foreach (Building building in buildings)
+        {
+            building.enabled = false;
+        }
     }
 
     private void HeartDecays()
@@ -71,6 +84,16 @@ public class GameManager : MonoBehaviour
         HeartBar.GetComponent<StatBar>().GainOrLoseAmount(heartGainDefault);
     }
 
+    public void IncreaseHeartCap(float amount)
+    {
+        HeartBar.GetComponent<StatBar>().SetCap(amount);
+    }
+
+    public void IncreaseHeartCap()
+    {
+        HeartBar.GetComponent<StatBar>().SetCap(heartCapGainDefault);
+    }
+
     public void SpendEnergy(float amount)
     {
         EnergyBar.GetComponent<StatBar>().GainOrLoseAmount(-amount);
@@ -89,6 +112,16 @@ public class GameManager : MonoBehaviour
     public void GainEnergy()
     {
         EnergyBar.GetComponent<StatBar>().GainOrLoseAmount(energyGainDefault);
+    }
+
+    public void IncreaseEnergyCap(float amount)
+    {
+        EnergyBar.GetComponent<StatBar>().SetCap(amount);
+    }
+
+    public void IncreaseEnergyCap()
+    {
+        EnergyBar.GetComponent<StatBar>().SetCap(energyCapGainDefault);
     }
 
     public void SpendMoney(int amount)

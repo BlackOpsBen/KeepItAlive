@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 2782321524100264891}
   - component: {fileID: 5745351491427488223}
   - component: {fileID: 2191691287347827785}
+  - component: {fileID: 2671237603416561148}
   m_Layer: 0
   m_Name: Office
   m_TagString: Untagged
@@ -182,7 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b07d4718f9edee468356e01ec55f922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feedbackIntensity: 10
   token: {fileID: 1880565947541232350, guid: 680cff6c1ef37b541b47529da72197e4, type: 3}
   tokenSpawnPoint: {fileID: 8945256404891109564}
   snapSpeed: 10
@@ -196,5 +196,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86844bbbfbb88954fa4e80c608c597f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyCost: 1
+  feedbackIntensity: 10
+--- !u!114 &2671237603416561148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4592578756987428057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ba10d7fd415804cbaf454fe90ec081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

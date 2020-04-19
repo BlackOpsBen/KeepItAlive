@@ -45,7 +45,7 @@ public class DivorceOverlay : MonoBehaviour
             headerText.fontSize = Mathf.Lerp(headerText.fontSize, headerEndFontSize, Time.deltaTime * fadeSpeed);
             yield return null;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         promptText.enabled = true;
         SceneLoadManager.Instance.SetCanRestart(true);
     }
