@@ -13,6 +13,7 @@ public class UseGym : MonoBehaviour
         if (GameManager.Instance.GetCurrentEnergy() >= energyCost)
         {
             GameManager.Instance.SpendEnergy(energyCost);
+            FloatingTextController.Instance.CreateFloatingText("-" + energyCost.ToString(), FloatingTextController.Instance.energyColor, transform.position);
 
             VisualFeedback();
             AudioManager.Instance.PlaySound("UseGym");
@@ -22,6 +23,7 @@ public class UseGym : MonoBehaviour
         else
         {
             AudioManager.Instance.PlaySound("NegativeFeedback");
+            FloatingTextController.Instance.CreateFloatingText("Need more energy", FloatingTextController.Instance.negativeColor, 50f, transform.position);
         }
     }
 

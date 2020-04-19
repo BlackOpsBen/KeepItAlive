@@ -12,4 +12,11 @@ public class FloatingText : MonoBehaviour
         popupNumberText.text = text;
         popupNumberText.color = color;
     }
+
+    public void SetText(string text, Color color, float size)
+    {
+        popupNumberText.text = text;
+        popupNumberText.color = color;
+        popupNumberText.fontSize = size;
+    }
 }

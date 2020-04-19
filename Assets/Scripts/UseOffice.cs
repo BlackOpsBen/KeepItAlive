@@ -18,6 +18,7 @@ public class UseOffice : MonoBehaviour
         if (GameManager.Instance.GetCurrentEnergy() >= energyCost)
         {
             GameManager.Instance.SpendEnergy(energyCost);
+            FloatingTextController.Instance.CreateFloatingText("-" + energyCost.ToString(), FloatingTextController.Instance.energyColor, transform.position);
 
             VisualFeedback();
             AudioManager.Instance.PlaySound("UseOffice");
@@ -28,6 +29,7 @@ public class UseOffice : MonoBehaviour
         else
         {
             AudioManager.Instance.PlaySound("NegativeFeedback");
+            FloatingTextController.Instance.CreateFloatingText("Need more energy", FloatingTextController.Instance.negativeColor, 50f, transform.position);
         }
     }
 

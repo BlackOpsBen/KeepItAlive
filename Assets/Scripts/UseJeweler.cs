@@ -12,6 +12,7 @@ public class UseJeweler : MonoBehaviour
         if (GameManager.Instance.GetCurrentMoney() >= moneyCost)
         {
             GameManager.Instance.SpendMoney(moneyCost);
+            FloatingTextController.Instance.CreateFloatingText("-" + moneyCost.ToString(), FloatingTextController.Instance.moneyColor, transform.position);
 
             VisualFeedback();
             AudioManager.Instance.PlaySound("UseJeweler");
@@ -21,6 +22,7 @@ public class UseJeweler : MonoBehaviour
         else
         {
             AudioManager.Instance.PlaySound("NegativeFeedback");
+            FloatingTextController.Instance.CreateFloatingText("Need $" + moneyCost.ToString(), FloatingTextController.Instance.negativeColor, 50f, transform.position);
         }
     }
 
