@@ -98,6 +98,7 @@ public class CycleAvatars : MonoBehaviour
         playerAvatars[currentlyActive].avatarObject.SetActive(false);
         playerAvatars[avatarIndex].avatarObject.SetActive(true);
         currentlyActive = avatarIndex;
+        GetComponent<PlayerMovement>().SetSpeeds(playerAvatars[avatarIndex].moveSpeed, playerAvatars[avatarIndex].turnSpeed);
         if (!canToggle)
         {
             StartCoroutine(SetCanToggle());

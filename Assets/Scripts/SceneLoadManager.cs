@@ -9,6 +9,10 @@ public class SceneLoadManager : MonoBehaviour
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            canRestart = true;
+        }
         EnsureOnlyOneInstance();
     }
 

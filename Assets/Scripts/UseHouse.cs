@@ -9,6 +9,9 @@ public class UseHouse : MonoBehaviour
     [SerializeField] private float feedbackIntensity = 20f;
     [SerializeField] private GameObject childBoy;
     [SerializeField] private GameObject childGirl;
+
+    private float birthThreshold = 0.1f;
+
     public void OnUseBuilding()
     {
         if (GameManager.Instance.GetCurrentEnergy() >= energyCost)
@@ -22,7 +25,7 @@ public class UseHouse : MonoBehaviour
             GameManager.Instance.GainHeart(heartGainAmount);
             FloatingTextController.Instance.CreateFloatingText("+" + heartGainAmount.ToString(), FloatingTextController.Instance.heartColor, GameManager.Instance.heartIcon.position);
 
-            if (Random.Range(0f, 1f) < 0.1f)
+            if (Random.Range(0f, 1f) < birthThreshold)
             {
                 GameObject childToBirth;
                 if (Random.Range(0f, 1f) < 0.5f)
@@ -36,6 +39,11 @@ public class UseHouse : MonoBehaviour
                 Vector3 spawnPoint = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y, transform.position.z + Random.Range(-1f, 1f)) * 3f;
                 Instantiate(childToBirth, transform.position, Quaternion.identity);
                 AudioManager.Instance.PlaySound("Baby");
+                birthThreshold = 0.1f;
+            }
+            else
+            {
+                birthThreshold += 0.025f;
             }
         }
         else
