@@ -88,12 +88,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7720344028384275331}
-  - component: {fileID: 1103592738193102269}
-  - component: {fileID: 4310795803083117901}
   - component: {fileID: 6737878076721033252}
   - component: {fileID: 4727234262060911745}
+  - component: {fileID: 5059640862857196096}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,33 +114,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1103592738193102269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737229073832073616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6002f458dbf4b4092515338866ab7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeedMultiplier: 10
-  turnSpeedMultiplier: 10
-  animator: {fileID: 2910648157447884406}
---- !u!114 &4310795803083117901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737229073832073616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8e57f036b6217a42a953db77d7cc089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &6737878076721033252
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -172,6 +144,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &5059640862857196096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737229073832073616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f05ca5a5bc04ef481842ddfb5d911c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedMultiplier: 5
+  turnSpeedMultiplier: 10
+  animator: {fileID: 2910648157447884406}
 --- !u!114 &764820960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +242,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d1b652a631da937408239451bfb9fdae,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d1b652a631da937408239451bfb9fdae,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: d1b652a631da937408239451bfb9fdae,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: d1b652a631da937408239451bfb9fdae,
         type: 3}

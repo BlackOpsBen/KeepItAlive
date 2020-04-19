@@ -73,7 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b07d4718f9edee468356e01ec55f922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feedbackIntensity: 20
   token: {fileID: 8082194739800437166, guid: c227be28d43b4154f8e618631f818fc1, type: 3}
   tokenSpawnPoint: {fileID: 9056467098875004691}
   snapSpeed: 10
@@ -89,6 +88,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33269a8704615ac45b260b520afa5e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyCost: 1
+  feedbackIntensity: 20
+  childBoy: {fileID: 6737229073832073616, guid: bde31aedbb584436c8cf9f8254f1517f,
+    type: 3}
+  childGirl: {fileID: 6737229073832073616, guid: bde31aedbb584436c8cf9f8254f1517f,
+    type: 3}
 --- !u!1 &1060142066396572890
 GameObject:
   m_ObjectHideFlags: 0

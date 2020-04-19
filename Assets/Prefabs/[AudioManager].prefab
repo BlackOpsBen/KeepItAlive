@@ -69,6 +69,10 @@ MonoBehaviour:
     volume: 1
     source: {fileID: 0}
   - name: SalaryIncreased
-    clip: {fileID: 8300000, guid: 22be7156626b91b45a91355b95eb5b93, type: 3}
+    clip: {fileID: 8300000, guid: 5b7407e3330950a42b273037c9579e2a, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - name: Baby
+    clip: {fileID: 8300000, guid: f1e2277ef28212b4587aed7dd42eb224, type: 3}
     volume: 1
     source: {fileID: 0}
