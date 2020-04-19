@@ -78,7 +78,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012489376982596899}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -212,3 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ba10d7fd415804cbaf454fe90ec081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingInterval: 20
+  intervalIncrease: 10
+  startingIncome: 100
+  incomeIncrease: 100

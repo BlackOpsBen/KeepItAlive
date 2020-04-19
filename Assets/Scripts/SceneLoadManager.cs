@@ -18,9 +18,14 @@ public class SceneLoadManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                SceneManager.LoadScene(0);
+                StartGame();
             }
         }
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 
     private void EnsureOnlyOneInstance()
@@ -32,6 +37,7 @@ public class SceneLoadManager : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(this);
         }
     }
 
