@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        SceneLoadManager.Instance.SetCanRestart(false);
+    }
+
     private void Update()
     {
         HeartDecays();

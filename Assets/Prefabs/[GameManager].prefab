@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3092643007282879338}
   - component: {fileID: 3092643007282879333}
-  - component: {fileID: 1808020789}
   m_Layer: 0
   m_Name: '[GameManager]'
   m_TagString: Untagged
@@ -55,18 +54,6 @@ MonoBehaviour:
   moneyIcon: {fileID: 0}
   heartIcon: {fileID: 0}
   energyIcon: {fileID: 0}
---- !u!114 &1808020789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3092643007282879335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d2e1fcaa9b02864ab1be7004a4ee917, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2630953528161166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +192,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090066084295188292, guid: 4f42f08ba2895b449ad171de7d8f66af,
+        type: 3}
+      propertyPath: m_text
+      value: 'You ain''t no
+
+        kinda lover!'
       objectReference: {fileID: 0}
     - target: {fileID: 3090066084492083083, guid: 4f42f08ba2895b449ad171de7d8f66af,
         type: 3}

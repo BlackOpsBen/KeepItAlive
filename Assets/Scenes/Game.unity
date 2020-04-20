@@ -16128,54 +16128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
-      propertyPath: m_text
-      value: Press Action button to restart
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630953907092863, guid: e209165d4bf47c64ebe512f2e20a7d6b, type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 16777215
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_text
-      value: 'You ain''t no
-
-        kinda lover!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092643006517537994, guid: e209165d4bf47c64ebe512f2e20a7d6b,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3092643007282879333, guid: e209165d4bf47c64ebe512f2e20a7d6b,
         type: 3}
       propertyPath: moneyIcon
