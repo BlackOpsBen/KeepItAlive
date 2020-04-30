@@ -51,7 +51,7 @@ public class DetermineIncome : MonoBehaviour
 
     private void FeedbackFX()
     {
-        FloatingTextController.Instance.CreateFloatingText("Salary increased!", Color.white, 100f, transform.position);
+        FloatingTextController.Instance.CreateFloatingText("Salary increased!", Color.white, 80f, transform.position);
         AudioManager.Instance.PlaySound("SalaryIncreased");
     }
 }

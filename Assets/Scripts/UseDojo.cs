@@ -46,7 +46,7 @@ public class UseDojo : MonoBehaviour
             }
             if (currentDojoLevel >= dojoRequirement)
             {
-                FloatingTextController.Instance.CreateFloatingText("You are a Ninja Master!", Color.white, 100f, transform.position);
+                FloatingTextController.Instance.CreateFloatingText("You are a Ninja Master!", Color.white, 80f, transform.position);
                 CycleAvatars.Instance.UnlockAvatar("Ninja");
                 hasNinja = true;
 

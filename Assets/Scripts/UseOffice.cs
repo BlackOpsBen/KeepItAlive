@@ -24,7 +24,7 @@ public class UseOffice : MonoBehaviour
             AudioManager.Instance.PlaySound("UseOffice");
 
             GameManager.Instance.GainMoney(determineIncome.GetCurrentIncome());
-            FloatingTextController.Instance.CreateFloatingText("+$" + determineIncome.GetCurrentIncome().ToString(), FloatingTextController.Instance.moneyColor, GameManager.Instance.moneyIcon.position);
+            FloatingTextController.Instance.CreateFloatingText("+$" + determineIncome.GetCurrentIncome().ToString(), FloatingTextController.Instance.moneyColor, transform.position);
 
             determineIncome.DecreaseSteps();
         }

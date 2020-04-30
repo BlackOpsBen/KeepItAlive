@@ -21,7 +21,7 @@ public class UseRestaurant : MonoBehaviour
                 AudioManager.Instance.PlaySound("UseRestaurant");
 
                 GameManager.Instance.GainEnergy(energyGainAmount);
-                FloatingTextController.Instance.CreateFloatingText("+" + energyGainAmount.ToString(), FloatingTextController.Instance.energyColor, GameManager.Instance.energyIcon.position);
+                FloatingTextController.Instance.CreateFloatingText("+" + energyGainAmount.ToString(), FloatingTextController.Instance.energyColor, transform.position);
             }
             else
             {
